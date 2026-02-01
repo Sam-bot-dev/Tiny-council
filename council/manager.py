@@ -9,7 +9,7 @@ class CouncilManager:
         """
         self.agents = agents
         
-    def conveve(self,query:str) -> Dict[str,str]:
+    def convene(self,query:str) -> Dict[str,str]:
         """
         Sends the query to all agents and collects their responses.
         """
