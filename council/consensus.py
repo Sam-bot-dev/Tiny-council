@@ -27,10 +27,13 @@ if __name__ == "__main__" :
     ]
     council = CouncilManager(agents)
     result = council.convene("Design a secure login system")
-    ai_responces = {}   # create it BEFORE the loop
+    ai_responces = [] # need to change this also look into grammer mistake 
 
     for agent, responce in result.items():
-        ai_responces[agent] = responce
+        ai_responces.append({
+            agent,
+            responce
+        })
 
 
 
