@@ -1,7 +1,7 @@
 '''
 Docstring for tests.test_manager
 
-when you run the test file run the file in module mode rather than in script mode 
+when you run the test file run the file in (module mode) rather than in (script mode) 
 
 python -m test.test_manager (for Windows)
 
