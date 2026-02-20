@@ -3,9 +3,9 @@ Docstring for tests.test_manager
 
 when you run the test file run the file in (module mode) rather than in (script mode) 
 
-python -m test.test_manager (for Windows)
+python -m tests.test_manager (for Windows)
 
-python3 -m test.test_manager (for mac )
+python3 -m tests.test_manager (for mac )
 '''
 
 # this is for testing manager , so that it works perfectly...
