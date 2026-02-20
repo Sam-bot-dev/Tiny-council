@@ -8,7 +8,7 @@ python -m test.test_manager (for Windows)
 python3 -m test.test_manager (for mac )
 '''
 
-
+# this is for testing manager , so that it works perfectly...
 from agents.planner import PlannerAgent
 from agents.critic import CriticAgent
 from council.manager import CouncilManager
