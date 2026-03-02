@@ -43,8 +43,8 @@ This makes the system **more robust, explainable, and realistic**.
       +-------------------+
       |  Council Manager  |
       +-------------------+
-        |        |      |
-        v        v      v
+        |       |       |
+        v       v       v
 +---------+ +---------+ +---------+
 | Planner | | Critic  | | Expert  |
 +---------+ +---------+ +---------+
