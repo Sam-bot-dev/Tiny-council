@@ -38,7 +38,7 @@ This makes the system **more robust, explainable, and realistic**.
 
 ```text
            User Query
-          |
+               |
                v
       +-------------------+
       |  Council Manager  |
