@@ -37,7 +37,7 @@ This makes the system **more robust, explainable, and realistic**.
 ## 🏗️ Core Architecture
 
 ```text
-      User Query
+           User Query
           |
           v
       +-------------------+
