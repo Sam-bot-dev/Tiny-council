@@ -54,9 +54,9 @@ This makes the system **more robust, explainable, and realistic**.
       +-------------------+
       | Consensus Engine  |
       +-------------------+
-        |
-        v
-Final Answer + Reasoning Trace
+                |
+                v
+   Final Answer + Reasoning Trace
 ```
 
 ---
