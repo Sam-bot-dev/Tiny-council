@@ -51,7 +51,7 @@ This makes the system **more robust, explainable, and realistic**.
       \         |         /
        \        |        /
         v       v       v
-+-------------------+
+      +-------------------+
 | Consensus Engine  |
 +-------------------+
         |
