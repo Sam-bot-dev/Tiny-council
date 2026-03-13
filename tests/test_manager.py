@@ -25,3 +25,6 @@ if __name__ == "__main__":
 
     for agent, response in result.items():
         print(f"{agent}: {response}")
+        
+    
+    
