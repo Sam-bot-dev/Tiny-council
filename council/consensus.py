@@ -13,6 +13,12 @@ this layer should be able to
 explain why it took the decision 
 
 '''
+# 🧠 Big lesson here
+
+# Garbage input → garbage system
+
+# Your Consensus Engine is only as good as:
+# 👉 the quality of agent outputs
 
 from agents.critic import CriticAgent
 from agents.planner import PlannerAgent
