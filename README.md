@@ -108,7 +108,11 @@ tiny-council/
 ├── api/
 │ └── main.py
 │
+├── cli/
+│ └── banner.py
+|
 ├── tests/
+│ └── test_manager.py
 ├── requirements.txt
 └── README.md
 ```
