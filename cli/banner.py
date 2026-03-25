@@ -29,4 +29,30 @@ def show_banner():
     print(colored("3. Type 'exit' to quit\n", "white"))
 
     print(colored("─" * 50, "grey"))
+    choice = input("Want to see architecture [Y/n]: ").lower()
+
+    if choice == "y":
+        print("Showing architecture...\n")
+        print('''           User Query
+               |
+               v
+      +-------------------+
+      |  Council Manager  |
+      +-------------------+
+        |       |       |
+        v       v       v
++---------+ +---------+ +---------+
+| Planner | | Critic  | | Expert  |
++---------+ +---------+ +---------+
+      \         |         /
+       \        |        /
+        v       v       v
+      +-------------------+
+      | Consensus Engine  |
+      +-------------------+
+                |
+                v
+   Final Answer + Reasoning Trace''')
+
+    
 show_banner()
