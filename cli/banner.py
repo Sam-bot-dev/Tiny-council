@@ -33,7 +33,7 @@ def show_banner():
 
     if choice == "y":
         print("Showing architecture...\n")
-        print('''           User Query
+        print(r'''           User Query
                |
                v
       +-------------------+
