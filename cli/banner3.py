@@ -2,6 +2,7 @@ import pyfiglet
 import time
 import sys
 from termcolor import colored
+#add agents or llms 
 
 # 🎯 Typing animation
 def type_print(text, delay=0.01):
@@ -57,7 +58,7 @@ def show_banner():
 
     if choice == "y":
         print("Showing architecture...\n")
-        print(r'''           User Query
+        type_print(r'''           User Query
                |
                v
       +-------------------+
@@ -76,9 +77,8 @@ def show_banner():
       +-------------------+
                 |
                 v
-   Final Answer + Reasoning Trace''')
+   Final Answer + Reasoning Trace''',0.05)
     else:
         type_print("Ok let's start\n",0.05)
-        type_print("Do you want 1 agent standalone with 3 agent_mindset or 3 different llms?",0.05)
+        # type_print("Do you want 1 agent standalone with 3 agent_mindset or 3 different llms?",0.05)
 
-show_banner()
