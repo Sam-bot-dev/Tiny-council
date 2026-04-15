@@ -1,10 +1,10 @@
 import requests
 import os
 from dotenv import load_dotenv
-#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
+
 # Load environment variables
 load_dotenv()
-HF_API_KEY = "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"
+
 # HF_API_KEY = os.getenv("HF_API_KEY")
 
 class HuggingFaceLLM:
