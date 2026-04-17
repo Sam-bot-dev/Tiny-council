@@ -25,6 +25,7 @@ class HuggingFaceLLM:
         }
 
         try:
+            print("API URL:", self.api_url)
             response = requests.post(
     self.api_url,
     headers=self.headers,
