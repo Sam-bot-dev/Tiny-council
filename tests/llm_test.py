@@ -1,5 +1,6 @@
 from llm.huggingface import HuggingFaceLLM
 
-llm = HuggingFaceLLM("google/flan-t5-base")
-
-print(llm.generate("What is a secure login system?"))
+if __name__ == "__main__":
+    llm = HuggingFaceLLM()
+    response = llm.generate("Explain secure login system")
+    print("\nFINAL OUTPUT:\n", response)

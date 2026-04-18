@@ -1,13 +1,26 @@
-from agents.base_agent import BaseAgent
+from llm.huggingface import HuggingFaceLLM
 
 
-class PlannerAgent(BaseAgent):
+class PlannerAgent:
     def __init__(self):
-        super().__init__(
-            name="Planner",
-            role="Breaks down the problem and proposes a plan.",
-            system_prompt="You are a planning-focused AI agent."
-        )
+        self.llm = HuggingFaceLLM()
+        self.name = "Planner"
 
     def think(self, query: str) -> str:
-        return f"[PLAN] High-level plan for: {query}"
+        prompt = f"""
+You are a senior system design planner.
+
+Your job is to break down problems into clear, structured, step-by-step solutions.
+
+Guidelines:
+- Be practical and actionable
+- Use step-by-step format
+- Focus on real-world implementation
+
+Problem:
+{query}
+"""
+
+        response = self.llm.generate(prompt)
+
+        return f"[Planner]\n{response}"

@@ -1,13 +1,32 @@
-from agents.base_agent import BaseAgent
+from llm.huggingface import HuggingFaceLLM
 
 
-class CriticAgent(BaseAgent):
+class CriticAgent:
     def __init__(self):
-        super().__init__(
-            name="Critic",
-            role="Finds flaws, risks, and edge cases.",
-            system_prompt="You are a critical and skeptical AI agent."
-        )
+        self.llm = HuggingFaceLLM()
+        self.name = "Critic"
 
     def think(self, query: str) -> str:
-        return f"[CRITIQUE] Potential risks in: {query}"
+        prompt = f"""
+You are a strict system design critic.
+
+Your job is to analyze solutions and find:
+- security risks
+- design flaws
+- scalability issues
+- missing considerations
+
+Be critical, analytical, and realistic.
+
+Problem:
+{query}
+
+Respond with:
+- Key risks
+- Weak points
+- What could go wrong
+"""
+
+        response = self.llm.generate(prompt)
+
+        return f"[Critic]\n{response}"
