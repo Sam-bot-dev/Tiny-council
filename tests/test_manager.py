@@ -27,7 +27,7 @@ if __name__ == "__main__":
     ]
 
     council = CouncilManager(agents)
-
-    result = council.convene("Design a secure login system")
+    user_inp = input("Enter here :-")
+    result = council.convene(user_inp)
 
     pretty_print(result)

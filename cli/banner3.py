@@ -11,7 +11,19 @@ def type_print(text, delay=0.01):
         sys.stdout.flush()
         time.sleep(delay)
     print()
+def pretty_print(results):
+    print("\n" + "═" * 60)
+    print("🏛️  TINY COUNCIL OUTPUT")
+    print("═" * 60)
 
+    for agent, response in results.items():
+        print("\n" + "─" * 60)
+        print(f"🔹 {agent}")
+        print("─" * 60)
+
+        print(response.strip())
+
+    print("\n" + "═" * 60 + "\n")
 # 🎯 Gradient effect (manual)
 def gradient_text(text):
     colors = ["cyan", "blue", "magenta", "red"]

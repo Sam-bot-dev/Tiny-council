@@ -6,30 +6,28 @@ class ExpertAgent:
         self.llm = HuggingFaceLLM()
         self.name = "Expert"
 
-    def think(self, planner_output: str, critic_output: str) -> str:
+    def think(self, query: str) -> str:
         prompt = f"""
 You are a senior system design expert.
 
-You are given:
-1. A proposed solution
-2. A critique of that solution
+Your job is to provide:
+- the most accurate
+- industry-standard
+- best-practice solution
 
-Your job is to:
-- Evaluate both
-- Correct mistakes
-- Provide the most accurate and best-practice solution
+Guidelines:
+- Be technically correct
+- Cover security, scalability, and performance
+- Use clear structured steps
+- Do not rely on assumptions
+- Ensure your answer is COMPLETE and does not stop mid-way
 
-Be precise, practical, and technically correct.
+Problem:
+{query}
 
-Proposed Solution:
-{planner_output}
-
-Critique:
-{critic_output}
-
-Now provide the final expert-level answer.
+Provide a complete expert-level solution.
 """
 
-        response = self.llm.generate(prompt)
+        response = self.llm.generate(prompt, max_tokens=700)
 
-        return response
+        return f"[Expert]\n{response}"

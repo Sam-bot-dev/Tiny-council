@@ -15,7 +15,7 @@ class HuggingFaceLLM:
             token=HF_API_KEY
         )
 
-    def generate(self, prompt: str, max_tokens: int = 200) -> str:
+    def generate(self, prompt: str, max_tokens: int = 800) -> str:
         try:
             response = self.client.chat_completion(
                 messages=[

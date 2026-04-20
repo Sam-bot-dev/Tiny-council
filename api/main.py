@@ -1,9 +1,33 @@
-#this file is responsible for input/output only
-# all files should be called here rather than this file being called else 
+from agents.planner import PlannerAgent
+from agents.critic import CriticAgent
+from agents.expert import ExpertAgent
+from council.manager import CouncilManager
+from cli.banner3 import pretty_print,show_banner
 
-from cli.banner3 import show_banner
-def user_inp():
-    user_input = input("Enter your statement:- ")
-    print(user_input)
-show_banner()
-user_inp()
+
+def run():
+    agents = [
+        PlannerAgent(),
+        CriticAgent(),
+        ExpertAgent()
+    ]
+
+    council = CouncilManager(agents)
+
+    while True:
+        query = input("Enter Here\n> ")
+
+        if query.lower() == "exit":
+            print("Goodbye 👋")
+            break
+
+        print("\nCouncil is thinking...\n")
+
+        result = council.convene(query)
+
+        pretty_print(result)
+
+
+if __name__ == "__main__":
+    show_banner()
+    run()
