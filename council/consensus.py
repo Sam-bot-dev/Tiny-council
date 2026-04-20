@@ -1,47 +1,77 @@
-# Consensus Engine (Conceptual Design) 
-'''
-Docstring for council.consensus
-this is a general agreement (as of opinion or fact) among a group of people or things
-here we are going to use it as intelligence layer.
+class ConsensusEngine:
+    def __init__(self):
+        pass
 
-this layer should be able to
+    # 🔍 Score a single response
+    def score_response(self, query: str, text: str) -> int:
+        score = 0
 
-1. What should we decide?
+        text_lower = text.lower()
+        query_lower = query.lower()
 
-2. Why this decision over the others?
+        # 🟢 1. Completeness (length)
+        score += len(text) // 50
 
-explain why it took the decision 
+        # 🟢 2. Structure (steps / bullets)
+        if "step" in text_lower or "-" in text or "*" in text:
+            score += 10
 
-'''
-# 🧠 Big lesson here
+        # 🟢 3. Safety / Risk awareness
+        safety_keywords = [
+            "secure", "risk", "attack", "authentication",
+            "validation", "encryption", "token", "password"
+        ]
+        for word in safety_keywords:
+            if word in text_lower:
+                score += 5
 
-# Garbage input → garbage system
+        # 🟢 4. Practicality (implementation signals)
+        practical_keywords = [
+            "implement", "use", "store", "build",
+            "design", "deploy", "api", "database"
+        ]
+        for word in practical_keywords:
+            if word in text_lower:
+                score += 3
 
-# Your Consensus Engine is only as good as:
-# 👉 the quality of agent outputs
+        # 🔥 5. USER ALIGNMENT (MOST IMPORTANT)
+        query_words = query_lower.split()
+        match_count = sum(1 for word in query_words if word in text_lower)
+        score += match_count * 4  # strong weight
 
-from agents.critic import CriticAgent
-from agents.planner import PlannerAgent
-from council.manager import CouncilManager
+        return score
 
+    # 🧠 Decide best response
+    def decide(self, query: str, responses: dict):
+        scores = {}
 
-if __name__ == "__main__" :
-    agents = [
-        PlannerAgent(),
-        CriticAgent(),
-        PlannerAgent()
-    ]
-    council = CouncilManager(agents)
-    result = council.convene("Design a secure login system")
-    ai_responces = [] # need to change this also look into grammer mistake 
+        # Score all agents
+        for agent, text in responses.items():
+            scores[agent] = self.score_response(query, text)
 
-    for agent, responce in result.items():
-        ai_responces.append({
-            agent,
-            responce
-        })
+        # Find best agent
+        best_agent = max(scores, key=scores.get)
+        final_answer = responses[best_agent]
 
+        # Build explanation
+        explanation = self._build_reason(best_agent, scores)
 
+        return {
+            "final_answer": final_answer,
+            "best_agent": best_agent,
+            "scores": scores,
+            "reason": explanation
+        }
 
-         
-print(ai_responces)
+    # 🧠 Explain WHY it chose best
+    def _build_reason(self, best_agent, scores):
+        sorted_agents = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+
+        explanation = f"{best_agent} selected as best response.\n\nScores:\n"
+
+        for agent, score in sorted_agents:
+            explanation += f"- {agent}: {score}\n"
+
+        explanation += "\nReason: Best balance of completeness, relevance, and practicality."
+
+        return explanation
