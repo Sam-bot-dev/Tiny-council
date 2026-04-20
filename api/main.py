@@ -2,8 +2,8 @@ from agents.planner import PlannerAgent
 from agents.critic import CriticAgent
 from agents.expert import ExpertAgent
 from council.manager import CouncilManager
-from cli.banner3 import pretty_print,show_banner
-
+from cli.banner3 import show_banner
+from cli.display import pretty_print
 
 def run():
     agents = [
