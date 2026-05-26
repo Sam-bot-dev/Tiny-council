@@ -212,7 +212,7 @@ https://huggingface.co/settings/tokens
 ## 4️⃣ Run Tiny Council
 
 ```bash
-python main.py
+python -m api.main
 ```
 
 > Replace `main.py` with your actual project entry file if different.
