@@ -221,7 +221,7 @@ python -m api.main
 
 ## 💻 Current Interface
 
-## 🖥️ Tiny Council CLI Demo
+### 🖥️ Tiny Council CLI Demo
 
 Below is a live terminal execution of Tiny Council where multiple agents collaboratively debate and generate a final response.
 
