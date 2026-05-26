@@ -1,2 +1,4 @@
 pyfiglet
 termcolor
+huggingface_hub
+python-dotenv
