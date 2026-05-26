@@ -221,16 +221,25 @@ python -m api.main
 
 ## 💻 Current Interface
 
-Tiny Council currently operates through a terminal-based CLI workflow where agents debate and collaboratively generate responses directly in the console.
+## 🖥️ Tiny Council CLI Demo
 
-Future versions will include:
-- FastAPI backend
-- Web dashboard
-- Live debate visualization
-- Agent monitoring UI
+Below is a live terminal execution of Tiny Council where multiple agents collaboratively debate and generate a final response.
+
+<p align="center">
+  <img src="assets/image1.png" alt="Tiny Council CLI Demo" width="900"/>
+</p>
 
 ---
 
+### ✨ Features Demonstrated
+
+- Multi-agent orchestration
+- Structured reasoning flow
+- Agent critique and validation
+- Consensus-based response generation
+- Terminal-based interactive workflow
+
+---
 ## 📁 Project Structure
 
 ```text
