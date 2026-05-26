@@ -84,6 +84,81 @@ Each agent operates independently and communicates through a structured debate l
 
 ---
 
+# ⚡ Installation
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/tiny-council.git
+cd tiny-council
+```
+
+---
+
+## 2️⃣ Create Virtual Environment (Recommended)
+
+### Linux / MacOS
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+---
+
+## 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 🔐 Environment Variables
+
+Tiny Council currently uses Hugging Face hosted LLMs for agent reasoning and collaborative responses.
+
+Create a `.env` file in the root directory:
+
+```env
+HUGGINGFACE_API_KEY=your_api_key_here
+```
+
+Generate your API key from:
+
+https://huggingface.co/settings/tokens
+
+---
+
+## 4️⃣ Run Tiny Council
+
+```bash
+python main.py
+```
+
+> Replace `main.py` with your actual project entry file if different.
+
+---
+
+## 💻 Current Interface
+
+Tiny Council currently operates through a terminal-based CLI workflow where agents debate and collaboratively generate responses directly in the console.
+
+Future versions will include:
+- FastAPI backend
+- Web dashboard
+- Live debate visualization
+- Agent monitoring UI
+
+---
+
 ## 📁 Project Structure
 
 ```text
