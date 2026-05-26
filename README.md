@@ -74,6 +74,78 @@ Each agent operates independently and communicates through a structured debate l
 
 ---
 
+# ⚙️ How Tiny Council Works
+
+Tiny Council follows a **multi-agent orchestration workflow** where multiple AI agents collaboratively solve problems through structured debate, critique, and synthesis.
+
+Instead of relying on a single AI response, the system creates a council of specialized agents that independently analyze the query and contribute their perspectives.
+
+---
+
+## 🔄 Workflow
+
+```text
+User Query
+    ↓
+Council Manager receives request
+    ↓
+Planner Agent proposes solution
+    ↓
+Critic Agent challenges assumptions
+    ↓
+Domain Expert validates correctness
+    ↓
+Synthesizer merges all viewpoints
+    ↓
+Final Answer + Reasoning Trace
+```
+
+---
+
+## 🧠 Agent Responsibilities
+
+### 🧠 Planner Agent
+- Breaks down the problem
+- Creates an initial strategy
+- Suggests possible approaches
+
+---
+
+### 🔎 Critic Agent
+- Identifies flaws and risks
+- Challenges weak assumptions
+- Detects inconsistencies
+
+---
+
+### 📚 Domain Expert Agent
+- Validates technical accuracy
+- Ensures factual correctness
+- Provides domain-specific insights
+
+---
+
+### 🧩 Synthesizer Agent
+- Combines all responses
+- Resolves conflicts
+- Produces final explainable answer
+
+---
+
+## ⚖️ Why Multi-Agent Systems?
+
+Traditional AI systems:
+- Generate single-pass responses
+- Lack internal critique
+- Hide reasoning paths
+
+Tiny Council improves this by:
+- Enabling collaborative reasoning
+- Increasing explainability
+- Supporting transparent decision-making
+- Producing more robust responses
+---
+
 ## 🛠️ Tech Stack
 
 - **Language:** Python  
