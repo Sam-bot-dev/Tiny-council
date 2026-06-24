@@ -33,3 +33,16 @@ class HuggingFaceLLM:
         except Exception as e:
             print("DEBUG ERROR:", e)
             return f"[HF ERROR] {str(e)}"
+        
+'''
+Result
+==================================================
+Tiny Council Benchmark Results
+==================================================
+Prompts Tested     : 10
+Average Latency    : 36.45s
+P95 Latency        : 55.00s
+Throughput         : 0.03 req/s
+Avg Response Size  : 12161 chars
+==================================================
+'''
